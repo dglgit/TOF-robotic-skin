@@ -1,0 +1,27 @@
+How to save the image's coordinate and the predicted coordinate for later 
+comparison in plotting? 
+
+
+
+1. Serv_test to start the communication with Neocleo. Hit run the current script
+hit enter respond to enable and hit stop to end the program. This program is to make 
+the setting to activata left sensor "1" of the Neocleo board and acquire histogram data 
+instead of the default gui or range data. 
+
+2. Seventh.py is the main training and vaidation program, it also imports color_mask.py,
+cv_plot.py and dict_mapping.py files to run the mapping and major task. It is prompted to
+write an trainng file which will be used as training data that will be invoked by 
+dict_mapping.py to see the previous saved training data to compare the
+the current data. Trainning data are saved as m-dd-yy-t#. If we have training data to be 
+invoked from dict_mapping.py, at the prompt of "writing a file for training data?" we can 
+also save it as a validation file. The validation data are saved as m-dd-yy-v#
+
+3. dict_mapping.py will invoke a training data, saved as 
+m-dd-yy-(finger)t#. After the file name is changed, save the file 
+for the new training data to take effect.
+
+
+4.supporting programs also includes color_mask.py amd cv.plot.py,
+just like dict_mapping above. color_mask.py imports dict_mapping.py 
+and uses openCV to get the coordinats of the objcets (ball or finger), 
+and traces.  cv_plot.py is used to plot bar graphs.
